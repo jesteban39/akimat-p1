@@ -5,5 +5,5 @@
 
 .list {
   display: grid;
-  grid-row: 1fr;
+  grid: 1fr 1fr 1fr;
 }
