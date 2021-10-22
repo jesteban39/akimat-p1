@@ -22,6 +22,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "compilerOptions": {
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
