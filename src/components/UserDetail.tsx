@@ -20,7 +20,7 @@ const UsersList = (props: { match: { params: { userName: string } } }) => {
   return (
     <article className="container">
       <div>
-        <img src={user.avatar_url} alt="user image" />
+        <img src={user.avatar_url} />
         <span>{user.login}</span>
         <span>{user.name}</span>
       </div>

@@ -47,7 +47,7 @@ const UsersList = () => {
       <section className="list">
         {usersList.map((user) => (
           <Link key={user.id} to={`/user/${user.login}`}>
-            <img width="50px" src={user.avatar_url} alt="user image" />
+            <img width="50px" src={user.avatar_url} />
             <span>{user.login}</span>
           </Link>
         ))}
