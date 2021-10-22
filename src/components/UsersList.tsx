@@ -11,6 +11,7 @@ import {
 
 import type { user } from "types";
 import { getUsersList } from "../store/slices/getUsersList";
+import "./usersList.css";
 
 const UsersList = () => {
   const [userName, setUserName] = useState("");
@@ -31,7 +32,7 @@ const UsersList = () => {
     dispatch(getUsersList(userName));
   };
   return (
-    <>
+    <div className='container'>
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">Search</label>
         <input
@@ -59,7 +60,7 @@ const UsersList = () => {
           ))}
         </List>
       </section>
-    </>
+    </div>
   );
 };
 export default UsersList;
