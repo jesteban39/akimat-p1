@@ -32,7 +32,7 @@ const UsersList = () => {
     dispatch(getUsersList(userName));
   };
   return (
-    <div className='container'>
+    <div className="container">
       <form onSubmit={handleSubmit}>
         <label htmlFor="search">Search</label>
         <input
@@ -44,21 +44,15 @@ const UsersList = () => {
         />
         <input type="submit" value="Search" />
       </form>
-      <section>
-        <List>
-          {usersList.map((user) => (
-            <Link key={user.id} to={`/user/${user.login}`}>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar>
-                    <img width="50px" src={user.avatar_url} alt="user image" />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText primary={user.login} />
-              </ListItem>
+      <section className="list">
+        {usersList.map((user) => (
+          <div key={user.id}>
+            <Link to={`/user/${user.login}`}>
+              <img width="50px" src={user.avatar_url} alt="user image" />
+              <span>{user.login}</span>
             </Link>
-          ))}
-        </List>
+          </div>
+        ))}
       </section>
     </div>
   );
