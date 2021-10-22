@@ -19,24 +19,30 @@ const UsersList = (props: { match: { params: { userName: string } } }) => {
 
   return (
     <article className="container">
-      <img src={user.avatar_url} alt="user image" />
       <div>
+        <img src={user.avatar_url} alt="user image" />
         <span>{user.login}</span>
         <span>{user.name}</span>
       </div>
+      <div>
+        <h2>Repositories</h2>
+        <List disablePadding>
+          {user.repos.map((repo) => (
+            <ListItemText primary={repo.name} />
+          ))}
+        </List>
+      </div>
 
-      <List disablePadding>
-        {user.repos.map((repo) => (
-          <ListItemText primary={repo.name} />
-        ))}
-      </List>
-      <List>
-        {user.orgs.map((org) => (
-          <ListItemText>
-            <ListItemText primary={org.login}  secondary={org.description} />
-          </ListItemText>
-        ))}
-      </List>
+      <div>
+        <h2>Organizations</h2>
+        <List>
+          {user.orgs.map((org) => (
+            <ListItemText>
+              <ListItemText primary={org.login} secondary={org.description} />
+            </ListItemText>
+          ))}
+        </List>
+      </div>
     </article>
   );
 };

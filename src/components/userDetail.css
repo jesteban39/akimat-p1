@@ -1,6 +1,13 @@
 .container {
   background-color: aqua;
+  display: flex;
+  align-items: space-between;
+  justify-content: space-evenly;
 }
 .container img {
   display: block;
+}
+
+.container [tagName="List"] {
+  background-color: red;
 }
